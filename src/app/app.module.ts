@@ -14,6 +14,8 @@ import {SharedModule} from "./shared/shared.module";
 import {AppRoutingModule} from "./app-routing.module";
 import {DashboardModule} from "./dashboard/dashboard.module";
 import {ScouterRegistrationModule} from "./scouter-registration/scouter-registration.module";
+import {OffersModule} from "./offers/offers.module";
+import {GrowlModule} from "primeng/growl";
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {ScouterRegistrationModule} from "./scouter-registration/scouter-registra
     SharedModule,
     AppRoutingModule,
     DashboardModule,
-    ScouterRegistrationModule
+    ScouterRegistrationModule,
+    OffersModule,
+    GrowlModule
   ],
   providers: [],
   bootstrap: [AppComponent]

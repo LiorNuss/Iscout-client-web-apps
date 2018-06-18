@@ -24,6 +24,7 @@
   </ul>
   </nav>
 </div>
+<p-growl *ngIf="loginService.user.type === 'player'" [(value)]="msgs"></p-growl>
 <router-outlet></router-outlet>
 <!--<iframe-->
   <!--width="600"-->

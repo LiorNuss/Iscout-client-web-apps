@@ -163,3 +163,7 @@ button {
   -webkit-box-shadow: 3px 3px 2px #888888;
   box-shadow: none;
 }
+
+.offer {
+  position: absolute;
+}

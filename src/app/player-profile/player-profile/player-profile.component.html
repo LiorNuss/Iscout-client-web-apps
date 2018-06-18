@@ -81,4 +81,5 @@
   </div>
   <app-player-graph [player]="player" class="player-graph-main"> </app-player-graph>
   <app-player-videos class="playerVideo" [player]="player" [permissions]="permissions"></app-player-videos>
+  <button class="offer" *ngIf="offerPermissions" (click)="offerToPlayer()"> Become Intrested in player </button>
 </div>

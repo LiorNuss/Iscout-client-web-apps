@@ -5,6 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {LoginService} from "../../login/login.service";
 import { Location } from '@angular/common';
 import {GlobalDataService} from "../../shared/services/global-data.service";
+import {OfferManagerService} from "../../offers/offer-manager.service";
 
 @Component({
   selector: 'app-player-profile',
@@ -19,11 +20,13 @@ export class PlayerProfileComponent implements OnInit, OnDestroy{
  teamName:string;
  permissions: boolean = false;
  playerDescription: string = 'Player own description...';
+ offerPermissions: boolean = false;
 
  constructor(private router: ActivatedRoute,
              private playerDao: PlayerDaoService,
              private loginService: LoginService,
              private globalData: GlobalDataService,
+             private offerManagerService: OfferManagerService,
              private location: Location) {
    this.player = new Player();
  }
@@ -31,6 +34,9 @@ export class PlayerProfileComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
    console.log("visited profileeee");
+   if (this.loginService.user.type === 'scouter') {
+     this.offerPermissions = true;
+   }
    this.router.params.subscribe(params => {
      this.getPlayer(this.loginService.user.id, params['playerId']);
    });
@@ -79,5 +85,13 @@ export class PlayerProfileComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(): void {
    console.log("profile destroyedddddd");
+  }
+
+  offerToPlayer() {
+    let data = {
+      "player_id": this.player.player_basic_Info.player_id,
+      "scouter_name": this.loginService.user.username
+    };
+    this.offerManagerService.sendOffer(data);
   }
 }

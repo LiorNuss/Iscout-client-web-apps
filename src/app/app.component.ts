@@ -6,6 +6,8 @@ import {LoginService} from "./login/login.service";
 import {Router} from "@angular/router";
 import {User} from "./shared/classes/user";
 import {SearchRowService} from "./search-row/search-row.service";
+import {Message} from "primeng/api";
+import {OfferManagerService} from "./offers/offer-manager.service";
 
 @Component({
   selector: 'app-root',
@@ -20,8 +22,13 @@ export class AppComponent implements OnInit {
   searchResults = false;
   login = true;
   dashboard = false;
+  msgs: Message[] = [];
 
-  constructor(private initService: InitService, private loginService: LoginService, private router: Router) {
+  constructor(private initService: InitService,
+              private loginService: LoginService,
+              private router: Router,
+              private offerManagerService: OfferManagerService) {
+    this.getMessages();
   }
 
   ngOnInit(): void {
@@ -32,4 +39,13 @@ export class AppComponent implements OnInit {
     this.loginService.user = new User();
     this.router.navigate(['/login']);
   }
+
+
+  getMessages() {
+    this.offerManagerService.offerEvent.subscribe(message => {
+      this.msgs = [];
+      this.msgs.push({severity:'info', summary:'Offer Recived', detail:'you got an offer from ' + message.scouter_name});
+    });
+  }
+
 }

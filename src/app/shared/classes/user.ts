@@ -2,7 +2,7 @@ export class User {
   private _id: number;
   private _entityId: number;
   private _type: string;
-
+  private _username: string;
 
   constructor() {
   }
@@ -30,5 +30,14 @@ export class User {
 
   set type(value: string) {
     this._type = value;
+  }
+
+
+  get username(): string {
+    return this._username;
+  }
+
+  set username(value: string) {
+    this._username = value;
   }
 }
