@@ -32,6 +32,7 @@ export class LoginService {
       this._user.entityId = playerData.player_id;
       this._user.type = "player";
       this._user.username = username;
+      this._user.isadmin = playerData.isadmin;
       console.log(this._user.id);
       console.log(this._user.entityId);
       this.offerManagerService.addUser(this._user.entityId);
@@ -45,6 +46,7 @@ export class LoginService {
     this.scouterDao.getScouterLogin(username, password).subscribe(scouterData => {
       this._user.id = scouterData.user_id;
       this._user.entityId = scouterData.scouter_id;
+      this._user.isadmin = scouterData.isadmin;
       this._user.type = "scouter";
       this._user.username = username;
       console.log(this._user.id);

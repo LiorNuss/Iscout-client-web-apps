@@ -12,8 +12,13 @@
       </span>
     </li>
     <li  class="toolbar-li">
-      <span  class="toolbar-a">
+       <span routerLink="/about"  class="toolbar-a">
         About
+      </span>
+    </li>
+    <li  class="toolbar-li">
+       <span routerLink="/admin"  *ngIf="loginService.user.isadmin === 1" class="toolbar-a">
+        Admin
       </span>
     </li>
     <li  class="toolbar-li">
@@ -25,8 +30,9 @@
   </nav>
 </div>
 <p-growl *ngIf="loginService.user.type === 'player'" [(value)]="msgs"></p-growl>
-<app-admin></app-admin>
-<!--<router-outlet></router-outlet>-->
+<!--<app-admin></app-admin>-->
+
+<router-outlet></router-outlet>
 <!--<iframe-->
   <!--width="600"-->
   <!--height="450"-->

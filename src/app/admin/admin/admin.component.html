@@ -1,19 +1,49 @@
-<table>
+<div align="center">
+<canvas #canvas></canvas>
+</div>
+<br>
+
+<div>
+  <span class="username">
+    <label for="username">username</label>
+    <input type="text" class="form-control input" id="username" name="username" #username>
+  </span>
+  <span class="type">
+    <label for="type">user type</label>
+    <select class="form-control input" name="type" id="type" #type>
+      <option value = ''> </option>
+      <option value = 'player'> player </option>
+      <option value = 'scouter'> scouter </option>
+    </select>
+  </span>
+  <span class="isadmin">
+    <label for="isadmin">is admin</label>
+    <select class="form-control input"  name="isadmin" id="isadmin" #isadmin>
+      <option value = ''> </option>
+      <option value = 'Yes'> yes </option>
+      <option value = 'No'> no </option>
+    </select>
+  </span>
+
+
+
+<table class="userTable">
   <tr>
     <th>user name</th>
     <th>user type</th>
     <th>is admin</th>
+    <th>delete</th>
   </tr>
   <tr *ngFor="let user of users">
     <td> {{user.username}}</td>
     <td> {{user.type}}</td>
     <td> {{user.isAdmin}}</td>
-    <td> X </td>
+    <td class="delete"> <span (click)="deleteUser(user.userId, user.type, user.entityId)">X </span></td>
   </tr>
 </table>
-
+</div>
 <br> <br>
-<p> hihihihihihihihihihihihi</p>
-<canvas #canvas></canvas>
-<p-chart type="pie" [data]="data"></p-chart>
+<button (click)="searchUsers(username.value, type.value, isadmin.value)" class="searchButton"> search users</button>
+
+<p-chart class="chart" type="pie" [data]="data" width="700px" height="500px" [responsive]="false"></p-chart>
 

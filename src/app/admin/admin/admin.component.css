@@ -1,6 +1,52 @@
 .table {
   width: 100%;
 }
+table, th, td {
+  border: 1px solid white;
+  padding: 15px;
+}
+
+.username {
+  position: absolute;
+  top: 203px;
+  left: 111px;
+}
+
+.type {
+  position: absolute;
+  top: 203px;
+  left: 291px;
+}
+
+.isadmin {
+  position: absolute;
+  top: 203px;
+  left: 471px;
+}
+
+.input {
+  width: 150px;
+}
+
+.userTable {
+  left: 111px;
+  position: absolute;
+  top: 292px;
+}
+.chart {
+  position: absolute;
+  left: 1000px;
+}
+
+.searchButton {
+  position: absolute;
+  top: 230px;
+  left: 655px;
+}
+
+.delete {
+  cursor: pointer;
+}
 /*@font-face {*/
   /*font-family: "Bitstream Vera Serif Bold";*/
   /*src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");*/

@@ -12,6 +12,10 @@ export class ServerConnectorService {
     return this.http.get(this.serverUrl + apiUrl, params);
   }
 
+  public deleteData(apiUrl: string, params?: any): Observable<any>{
+    return this.http.delete(this.serverUrl + apiUrl, params);
+  }
+
   public postData(apiUrl:string, data: any): Observable<any>{
     return this.http.post(this.serverUrl + apiUrl, data);
   }

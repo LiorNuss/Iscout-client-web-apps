@@ -20,6 +20,10 @@
           <td class="table-row-text"> {{teamName}}</td>
         </tr>
         <tr class="">
+          <th>Region</th>
+          <td class="table-row-text"> {{player.player_basic_Info.region}} </td>
+        </tr>
+        <tr class="">
           <th>Country</th>
           <td class="table-row-text"> {{player.player_basic_Info.country}} </td>
         </tr>
@@ -81,5 +85,8 @@
   </div>
   <app-player-graph [player]="player" class="player-graph-main"> </app-player-graph>
   <app-player-videos class="playerVideo" [player]="player" [permissions]="permissions"></app-player-videos>
-  <button class="offer" *ngIf="offerPermissions" (click)="offerToPlayer()"> Become Intrested in player </button>
+  <button pButton type="button" label="Become Intrested in player"
+          class="ui-button-success offer" *ngIf="offerPermissions" (click)="offerToPlayer()">
+  </button>
+  <!--<button class="offer" *ngIf="offerPermissions" (click)="offerToPlayer()"> Become Intrested in player </button>-->
 </div>

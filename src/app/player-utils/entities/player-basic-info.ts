@@ -9,7 +9,7 @@ export class PlayerBasicInfo {
   private _videos_url: string[];
   private _img: string;
   private _own_description: string;
-
+  private _region: string;
   constructor() {
   }
 
@@ -92,5 +92,14 @@ export class PlayerBasicInfo {
 
   set own_description(value: string) {
     this._own_description = value;
+  }
+
+
+  get region(): string {
+    return this._region;
+  }
+
+  set region(value: string) {
+    this._region = value;
   }
 }

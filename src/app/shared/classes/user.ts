@@ -3,7 +3,7 @@ export class User {
   private _entityId: number;
   private _type: string;
   private _username: string;
-
+  private _isadmin: number;
   constructor() {
   }
 
@@ -39,5 +39,14 @@ export class User {
 
   set username(value: string) {
     this._username = value;
+  }
+
+
+  get isadmin(): number {
+    return this._isadmin;
+  }
+
+  set isadmin(value: number) {
+    this._isadmin = value;
   }
 }

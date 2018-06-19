@@ -17,6 +17,7 @@ import {ScouterRegistrationModule} from "./scouter-registration/scouter-registra
 import {OffersModule} from "./offers/offers.module";
 import {GrowlModule} from "primeng/growl";
 import {AdminModule} from "./admin/admin.module";
+import {AboutModule} from "./about/about.module";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {AdminModule} from "./admin/admin.module";
     ScouterRegistrationModule,
     OffersModule,
     GrowlModule,
-    AdminModule
+    AdminModule,
+    AboutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -166,4 +166,8 @@ button {
 
 .offer {
   position: absolute;
+  top: 514px;
+  left: 575px;
+  width: 300px;
+  height: 100px;
 }
